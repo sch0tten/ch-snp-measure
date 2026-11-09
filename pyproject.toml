@@ -1,0 +1,26 @@
+[project]
+name = "ch-snp-measure"
+version = "0.1.0"
+description = "Offline SEV-SNP launch measurement for Cloud Hypervisor (KVM) guests booted from an IGVM firmware with fw_cfg direct kernel boot"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+authors = [{ name = "Stefano Schotten", email = "schotten83@gmail.com" }]
+keywords = ["sev-snp", "cloud-hypervisor", "igvm", "attestation", "confidential-computing", "measurement"]
+# sev-snp-measure provides the launch-digest (GCTX), SEV hash table and VMSA primitives.
+# 0.0.13 is the version whose QEMU/OVMF model was verified against a chip-signed report on the same host.
+dependencies = ["sev-snp-measure==0.0.13"]
+
+[project.urls]
+Repository = "https://github.com/sch0tten/ch-snp-measure"
+Issues = "https://github.com/sch0tten/ch-snp-measure/issues"
+
+[project.scripts]
+ch-snp-measure = "ch_snp_measure:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["ch_snp_measure.py"]

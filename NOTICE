@@ -1,0 +1,11 @@
+ch-snp-measure
+Copyright 2026 Stefano Schotten
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Third-party material:
+- The digest primitives (PAGE_INFO chaining, SEV hash table, VMSA layout) are imported from
+  sev-snp-measure (https://github.com/virtee/sev-snp-measure), Apache-2.0.
+- igvm/*.igvm are builds of Project Oak's stage0 firmware (https://github.com/project-oak/oak),
+  Apache-2.0, wrapped with Oak's buildigvm. See igvm/README.md for the exact commits and the patch
+  applied to the "legacygap" variants.

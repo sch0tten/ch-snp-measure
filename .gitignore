@@ -1,0 +1,7 @@
+# kernels/initramfs for the test vectors are not in git (see tests/vectors.json "fetch")
+testdata/
+!testdata/README.md
+.venv/
+__pycache__/
+*.pyc
+dist/
